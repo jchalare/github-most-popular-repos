@@ -1,0 +1,23 @@
+{
+  "name": "github_most_popular_repos_js",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest ",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "This shows the 10 most popular repos on github ",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.19.2",
+    "supertest": "^7.0.0"
+  }
+}
