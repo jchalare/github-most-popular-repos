@@ -1,10 +1,8 @@
-
-
 const request = require('supertest');
 const app = require('../app');
 
 describe('GET /', () => {
-  it('responds with JSON containing the top 10 repositories of user "google"', async () => {
+  test('responds with JSON containing the top 10 repositories of user "google"', async () => {
     const response = await request(app).get('/');
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveLength(10);
@@ -17,7 +15,7 @@ describe('GET /', () => {
 
 
 describe('GET /custom-top-repositories', () => {
-  it('responds with JSON containing custom top repositories from a custom user ', async () => {
+  test('responds with JSON containing custom top repositories from a custom user ', async () => {
     const response = await request(app).get('/?user=jchalare&reposToShow=5');
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveLength(5);
@@ -31,7 +29,7 @@ describe('GET /custom-top-repositories', () => {
 
 
 describe('GET /invalid-route', () => {
-  it('responds with 404 status code', async () => {
+  test('responds with 404 status code', async () => {
     const response = await request(app).get('/invalid-route');
     expect(response.statusCode).toBe(404);
       });
